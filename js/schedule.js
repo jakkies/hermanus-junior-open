@@ -69,6 +69,7 @@ const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
 }[character]));
 const displayTime = value => String(value).replace(/(am|pm)$/i, " $1").toUpperCase();
+const courtOrder = value => Number(String(value).match(/\d+/)?.[0]) || Number.MAX_SAFE_INTEGER;
 const normalisePlayer = value => String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
 const resultKey = (playerA, playerB) => [normalisePlayer(playerA), normalisePlayer(playerB)].sort().join("|");
 const cleanScore = value => String(value || "").trim().replace(/\s+/g, " ");
@@ -125,7 +126,7 @@ function renderSchedule(day, division) {
   }
   feed.innerHTML = [...groups.entries()].map(([time, matches]) => `<section class="schedule-slot" aria-label="${escapeHTML(displayTime(time))}">
     <time class="schedule-slot__time">${escapeHTML(displayTime(time))}</time>
-    <div class="schedule-slot__matches">${matches.map(renderMatch).join("")}</div>
+    <div class="schedule-slot__matches">${[...matches].sort((a, b) => courtOrder(a[2]) - courtOrder(b[2])).map(renderMatch).join("")}</div>
   </section>`).join("");
 }
 

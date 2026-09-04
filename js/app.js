@@ -3,7 +3,7 @@ import { initialiseNavigation } from "./navigation.js";
 import { initialiseSharing } from "./share.js?v=3";
 import { loadOfficialResults } from "./official-results.js?v=8";
 import { initialiseDraws } from "./draws.js?v=2";
-import { initialiseSchedule, updateScheduleResults } from "./schedule.js?v=2";
+import { initialiseSchedule, updateScheduleResults } from "./schedule.js?v=3";
 
 const OFFICIAL_RESULTS_REFRESH_INTERVAL = 60 * 1000;
 let officialResultsRefreshActive = false;
