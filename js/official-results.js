@@ -1,5 +1,5 @@
 import bundledSnapshot from "./official-results-snapshot.js?v=3";
-import { calculateStandings, mergeCapturedResults } from "./standings-calculator.js?v=1";
+import { calculateStandings, mergeCapturedResults } from "./standings-calculator.js?v=2";
 
 const DEFAULT_RESULTS_URL =
   "https://sportyhq.com/tournament/tv_display/27429";

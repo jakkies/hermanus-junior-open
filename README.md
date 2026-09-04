@@ -27,7 +27,7 @@ Shared SportyHQ feed URLs are configured in `js/feed-config.js`. An organiser ca
 
 ## Capturing SportyHQ results
 
-Add completed matches to `js/captured-results.json` and set `capturedAt` to the capture date and time. The same captured records update the schedule and calculate the relevant round-robin standings automatically; an open page checks the file every minute. Each result uses `division`, `a`, `b`, `scoreA`, `scoreB`, `winner` (`a` or `b`) and `status` (`Completed`). Scores may contain each game's points (for example, `"11 8 11 11"`) or a games tally (for example, `"3"`). Rankings use match wins, game difference, games won and original box position, in that order. Live or incomplete matches are excluded from the standings.
+Add current matches to `js/captured-results.json` and set `capturedAt` to the SportyHQ capture date and time. The same records update the schedule and calculate the relevant round-robin standings automatically; an open page checks the file every minute. Each result uses `division`, `a`, `b`, `scoreA`, `scoreB`, `winner` (`a` or `b`) and `status` (`Completed` or `Live`). Scores may contain each game's points (for example, `"11 8 11 11"`) or a games tally (for example, `"3"`). Rankings use match wins, game percentage, point percentage, games won, points won and original box position, in that order. Live or incomplete matches are excluded from the standings.
 
 ## Pages
 

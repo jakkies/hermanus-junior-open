@@ -1,9 +1,9 @@
 import { fixtures, standings } from "./data.js?v=7";
 import { initialiseNavigation } from "./navigation.js";
 import { initialiseSharing } from "./share.js?v=3";
-import { loadOfficialResults } from "./official-results.js?v=8";
+import { loadOfficialResults } from "./official-results.js?v=9";
 import { initialiseDraws } from "./draws.js?v=2";
-import { initialiseSchedule, updateScheduleResults } from "./schedule.js?v=3";
+import { initialiseSchedule, updateScheduleResults } from "./schedule.js?v=4";
 
 const OFFICIAL_RESULTS_REFRESH_INTERVAL = 60 * 1000;
 let officialResultsRefreshActive = false;
@@ -41,7 +41,7 @@ function updateStandingsStatus(groups, snapshot = {}) {
   const completed = Number(snapshot.fixtures?.filter(match => match.status === "Completed").length || 0);
   status.dataset.state = completed ? "success" : "waiting";
   status.lastChild.textContent = completed
-    ? `Calculated from ${completed} completed ${completed === 1 ? "result" : "results"}${snapshot.capturedAt ? ` · Captured ${snapshot.capturedAt}` : ""} · Refreshes every minute.`
+    ? `Calculated from ${completed} completed ${completed === 1 ? "result" : "results"}${snapshot.capturedAt ? ` · Synced ${snapshot.capturedAt}` : ""}.`
     : "Standings will calculate automatically after results are captured.";
 }
 
@@ -71,7 +71,7 @@ function renderStandings(groups, stages = [], snapshot = {}) {
       <div class="table-scroll">
         <table class="standings-table">
           <caption class="sr-only">${escapeHTML(group.name)} standings</caption>
-          <thead><tr><th scope="col">#</th><th scope="col">Player</th><th scope="col">P</th><th scope="col">W</th><th scope="col">L</th><th scope="col">Games</th></tr></thead>
+          <thead><tr><th scope="col">#</th><th scope="col">Player</th><th scope="col">P</th><th scope="col">W</th><th scope="col">L</th><th scope="col">Points</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>

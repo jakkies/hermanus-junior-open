@@ -37,6 +37,18 @@ export function gameTotals(fixture) {
   return { a, b };
 }
 
+export function pointTotals(fixture) {
+  const scoresA = scoreValues(fixture.scoreA);
+  const scoresB = scoreValues(fixture.scoreB);
+  if (scoresA.length > 1 || scoresB.length > 1) {
+    return {
+      a: scoresA.reduce((total, score) => total + score, 0),
+      b: scoresB.reduce((total, score) => total + score, 0)
+    };
+  }
+  return gameTotals(fixture);
+}
+
 function winnerSide(fixture, games) {
   if (fixture.winner === "a" || fixture.winner === "b") return fixture.winner;
   if (games.a > games.b) return "a";
@@ -71,6 +83,8 @@ export function calculateStandings(fixtures = []) {
       played: 0,
       wins: 0,
       losses: 0,
+      gamesFor: 0,
+      gamesAgainst: 0,
       pointsFor: 0,
       pointsAgainst: 0
     }));
@@ -88,10 +102,15 @@ export function calculateStandings(fixtures = []) {
       completedMatches += 1;
       playerA.played += 1;
       playerB.played += 1;
-      playerA.pointsFor += games.a;
-      playerA.pointsAgainst += games.b;
-      playerB.pointsFor += games.b;
-      playerB.pointsAgainst += games.a;
+      const points = pointTotals(fixture);
+      playerA.gamesFor += games.a;
+      playerA.gamesAgainst += games.b;
+      playerB.gamesFor += games.b;
+      playerB.gamesAgainst += games.a;
+      playerA.pointsFor += points.a;
+      playerA.pointsAgainst += points.b;
+      playerB.pointsFor += points.b;
+      playerB.pointsAgainst += points.a;
       if (winner === "a") {
         playerA.wins += 1;
         playerB.losses += 1;
@@ -104,7 +123,11 @@ export function calculateStandings(fixtures = []) {
     if (!completedMatches) return [];
     const ranked = rows
       .sort((a, b) => b.wins - a.wins ||
-        (b.pointsFor - b.pointsAgainst) - (a.pointsFor - a.pointsAgainst) ||
+        (b.gamesFor / Math.max(1, b.gamesFor + b.gamesAgainst)) -
+          (a.gamesFor / Math.max(1, a.gamesFor + a.gamesAgainst)) ||
+        (b.pointsFor / Math.max(1, b.pointsFor + b.pointsAgainst)) -
+          (a.pointsFor / Math.max(1, a.pointsFor + a.pointsAgainst)) ||
+        b.gamesFor - a.gamesFor ||
         b.pointsFor - a.pointsFor ||
         a.initialPosition - b.initialPosition ||
         a.players[0].localeCompare(b.players[0]))

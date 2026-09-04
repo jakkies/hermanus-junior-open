@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   calculateStandings,
   gameTotals,
+  pointTotals,
   mergeCapturedResults
 } from "../js/standings-calculator.js";
 
@@ -21,8 +22,12 @@ test("counts individual game scores and ranks a completed match", () => {
   assert.equal(standings[0].name, "U15 Boys · Box 1");
   assert.deepEqual(
     standings[0].rows.slice(0, 2).map(row => [row.players[0], row.played, row.wins, row.losses, row.pointsFor, row.pointsAgainst]),
-    [["Christoff Kruger", 1, 1, 0, 3, 1], ["Christiaan Krige", 0, 0, 0, 0, 0]]
+    [["Christoff Kruger", 1, 1, 0, 41, 32], ["Christiaan Shaw", 1, 0, 1, 32, 41]]
   );
+});
+
+test("totals points from detailed game scores", () => {
+  assert.deepEqual(pointTotals({ scoreA: "11, 7, 11, 11", scoreB: "6, 11, 7, 1" }), { a: 40, b: 25 });
 });
 
 test("accepts a games tally and infers the winner", () => {

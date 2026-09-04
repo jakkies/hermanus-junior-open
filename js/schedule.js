@@ -4,28 +4,28 @@ const schedule = [
   ["friday", "4:00pm", "Court 4", "U15 Boys", "Christoff Kruger", "Christiaan Shaw"],
   ["friday", "4:00pm", "Court 1", "U19 Boys", "Sahil Khalfey", "Ethan Joubert"],
   ["friday", "4:30pm", "Court 4", "U17 Boys", "Denwill May", "Jade Plaatjies"],
-  ["friday", "4:30pm", "Court 3", "U17 Boys", "NicolaasW Rust", "Molibeli Mathibeli"],
+  ["friday", "4:30pm", "Court 3", "U17 Boys", "Omri Beets", "Jamaine Saaiman"],
   ["friday", "4:30pm", "Court 2", "U17 Boys", "Oliver Moyo", "Evan Potgieter"],
   ["friday", "4:30pm", "Court 1", "U17 Boys", "Milton Posthumus", "Likhanye Mayile"],
   ["friday", "5:00pm", "Court 3", "U19 Boys", "Albrezain Pietersen", "Sahil Khalfey"],
   ["friday", "5:00pm", "Court 2", "U17 Boys", "Janno Kruger", "Nicolaas van Zyl"],
-  ["friday", "5:00pm", "Court 1", "U17 Boys", "Omri Beets", "Jamaine Saaiman"],
+  ["friday", "5:00pm", "Court 1", "U17 Boys", "NicolaasW Rust", "Molibeli Mathibeli"],
   ["friday", "5:00pm", "Court 4", "U19 Boys", "Yanu Koorts", "Tamara Werneyer"],
   ["friday", "5:30pm", "Court 4", "U15 Boys", "Livia Roodt", "Sa-ad Tootla"],
   ["friday", "5:30pm", "Court 3", "U15 Boys", "Reuben Bekker", "Johan Pretorius"],
   ["friday", "5:30pm", "Court 2", "U15 Boys", "Christiaan Shaw", "Umar Tootla"],
   ["friday", "5:30pm", "Court 1", "U19 Boys", "Jesse Swart", "Owen Scholtz"],
-  ["friday", "6:00pm", "Court 1", "U15 Boys", "Christoff Kruger", "Christiaan Krige"],
-  ["friday", "6:00pm", "Court 4", "U17 Boys", "Molibeli Mathibeli", "Jade Plaatjies"],
-  ["friday", "6:00pm", "Court 3", "U17 Boys", "NicolaasW Rust", "Denwill May"],
+  ["friday", "6:00pm", "Court 3", "U15 Boys", "Christoff Kruger", "Christiaan Krige"],
+  ["friday", "6:00pm", "Court 4", "U17 Boys", "Omri Beets", "Stephanus Kruger"],
   ["friday", "6:00pm", "Court 2", "U17 Boys", "Likhanye Mayile", "Evan Potgieter"],
   ["friday", "6:30pm", "Court 3", "U19 Boys", "Albrezain Pietersen", "Ethan Joubert"],
   ["friday", "6:30pm", "Court 2", "U17 Boys", "Janno Kruger", "Jamaine Saaiman"],
-  ["friday", "6:30pm", "Court 4", "U17 Boys", "Omri Beets", "Stephanus Kruger"],
+  ["friday", "6:30pm", "Court 4", "U17 Boys", "NicolaasW Rust", "Denwill May"],
   ["friday", "6:30pm", "Court 1", "U17 Boys", "Milton Posthumus", "Oliver Moyo"],
   ["friday", "7:00pm", "Court 1", "U15 Boys", "Johan Pretorius", "Sa-ad Tootla"],
   ["friday", "7:00pm", "Court 2", "U19 Boys", "Yanu Koorts", "Jesse Swart"],
   ["friday", "7:00pm", "Court 3", "U19 Boys", "Tamara Werneyer", "Owen Scholtz"],
+  ["friday", "7:00pm", "Court 4", "U17 Boys", "Molibeli Mathibeli", "Jade Plaatjies"],
   ["saturday", "8:00am", "Court 4", "U15 Boys", "Livia Roodt", "Johan Pretorius"],
   ["saturday", "8:00am", "Court 3", "U15 Boys", "Reuben Bekker", "Sa-ad Tootla"],
   ["saturday", "8:00am", "Court 2", "U15 Boys", "Christiaan Shaw", "Christiaan Krige"],
@@ -164,9 +164,9 @@ export function updateScheduleResults(fixtures = [], options = {}) {
     const live = [...resultLookup.values()].filter(fixture => fixture.status === "Live").length;
     status.dataset.state = live ? "live" : hasResults ? "success" : "waiting";
     if (live) {
-      status.lastChild.textContent = `Schedule from SportyHQ · ${live} live ${live === 1 ? "match" : "matches"}${completed ? ` · ${completed} final` : ""}.`;
+      status.lastChild.textContent = `Schedule from SportyHQ · ${live} live ${live === 1 ? "match" : "matches"}${completed ? ` · ${completed} final` : ""}${options.capturedAt ? ` · Synced ${options.capturedAt}` : ""}.`;
     } else if (completed) {
-      status.lastChild.textContent = `Schedule from SportyHQ · ${completed} final ${completed === 1 ? "result" : "results"} · Refreshes every minute.`;
+      status.lastChild.textContent = `Schedule from SportyHQ · ${completed} final ${completed === 1 ? "result" : "results"}${options.capturedAt ? ` · Synced ${options.capturedAt}` : ""}.`;
     } else {
       status.lastChild.textContent = options.isBundledSnapshot
         ? "Schedule from SportyHQ · Waiting for live results."
