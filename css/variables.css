@@ -1,0 +1,14 @@
+:root{
+  --colour-brand-navy:#192f64;--colour-brand-blue:#254690;--colour-brand-coral:#dd596c;
+  --colour-brand-purple:#b678b5;--colour-brand-orange:#f99b2e;--colour-brand-gold:#ffbd22;
+  --colour-electric-green:var(--colour-brand-gold);--colour-faded-green:#5b4520;--colour-off-white:#fff0d2;
+  --colour-silver-grey:#b9b6c9;--colour-midnight-green:#172958;--colour-bg:#101d43;
+  --colour-bg-alt:#172958;--colour-surface:#1c3269;--colour-surface-hover:#29498e;
+  --colour-border:rgba(255,255,255,.14);--colour-text:#f7f7fb;--colour-text-muted:#a6a9c1;
+  --colour-success:var(--colour-brand-gold);--colour-error:#ff7b88;--colour-warning:#ffca54;
+  --font-heading:"Montserrat",system-ui,sans-serif;--font-body:"Inter",system-ui,sans-serif;
+  --display:clamp(2.75rem,7vw,5.5rem);--h1:clamp(2.25rem,5vw,4rem);--h2:clamp(1.75rem,4vw,3rem);
+  --h3:clamp(1.25rem,2vw,1.75rem);--score:clamp(2.5rem,7vw,5rem);
+  --radius-sm:.5rem;--radius-md:1rem;--radius-lg:1.5rem;--container:80rem;
+  --shadow:0 22px 55px rgba(0,0,0,.3)
+}

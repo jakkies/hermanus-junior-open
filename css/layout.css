@@ -1,0 +1,35 @@
+.container{width:min(100% - 2rem,var(--container));margin-inline:auto}
+.site-header{position:fixed;inset:0 0 auto;z-index:100;height:4.5rem;border-bottom:1px solid transparent;transition:height .2s,background .2s,border-color .2s}
+.site-header.is-scrolled{height:3.75rem;background:rgba(16,29,67,.94);border-color:var(--colour-border);backdrop-filter:blur(14px)}
+.site-header__inner{height:100%;display:flex;align-items:center;gap:clamp(.35rem,2vw,.75rem)}
+.brand{display:inline-flex;align-items:center}
+.brand__logo{display:block;width:auto;height:3.5rem}
+.site-header .brand__logo{height:clamp(2.7rem,8vw,3.35rem)}
+.site-header__logo-divider{align-self:center;width:1px;height:1.75rem;background:var(--colour-border)}
+.site-header__event-logo{display:block;width:auto;height:clamp(1.35rem,6vw,2.35rem)}
+.site-header__actions{margin-left:auto;display:flex;align-items:center;gap:.5rem}.site-header__share{margin-left:0}.share-label--short{display:none}
+.hero{position:relative;min-height:39rem;display:flex;align-items:center;padding:6rem 0 2.75rem;overflow:hidden;isolation:isolate;background:var(--colour-brand-navy)}
+.hero__media,.hero__veil{position:absolute;inset:0;z-index:-2}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:center 48%}
+.hero__veil{z-index:-1;background:radial-gradient(circle at 86% 44%,rgba(255,189,34,.94) 0 8%,rgba(249,155,46,.82) 8% 17%,rgba(182,120,181,.66) 17% 27%,rgba(221,89,108,.72) 27% 37%,transparent 37%),linear-gradient(105deg,rgba(16,29,67,.99) 0%,rgba(25,47,100,.96) 50%,rgba(37,70,144,.7) 100%)}
+.hero::after{content:"";position:absolute;z-index:-1;left:-8%;right:-8%;bottom:-8rem;height:12rem;border-radius:50% 50% 0 0;background:var(--colour-brand-gold);transform:rotate(-2deg);opacity:.98}
+.hero__content{display:grid;gap:2rem;align-items:start}.hero__copy{max-width:55rem}
+.hero h1{max-width:55rem;font-size:clamp(2.5rem,5.3vw,4.8rem);text-transform:uppercase;margin:.7rem 0 1rem}.hero h1 .hero-title__follow{color:#fff}.hero h1 .hero-title__accent{color:var(--colour-electric-green)}
+.hero__intro{max-width:38rem;color:#d1d5db;font-size:clamp(1rem,2vw,1.2rem)}
+.button-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.hero__event-brand{display:grid;place-items:center;width:min(78vw,25rem);margin:-1.2rem auto 0;align-self:start}
+.hero__event-brand img{width:100%;height:auto;border-radius:1.6rem;box-shadow:0 1.5rem 4rem rgba(6,12,32,.48);transform:rotate(1.5deg)}
+.event-status{display:grid;grid-template-columns:repeat(2,1fr);margin-top:1.5rem;background:rgba(16,29,67,.84);border:1px solid var(--colour-border);border-radius:var(--radius-md);backdrop-filter:blur(12px)}
+.event-status div{padding:1rem;border-right:1px solid var(--colour-border);border-bottom:1px solid var(--colour-border)}
+.event-status div:nth-child(2n){border-right:0}.event-status div:nth-last-child(-n+2){border-bottom:0}
+.event-status span,.event-status strong{display:block}.event-status span{color:var(--colour-text-muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}.event-status strong{margin-top:.18rem;font-size:.88rem}
+.quick-nav{position:sticky;top:3.75rem;z-index:50;background:rgba(25,47,100,.96);border-block:1px solid var(--colour-border);backdrop-filter:blur(12px)}
+.quick-nav__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.quick-nav__track::-webkit-scrollbar{display:none}
+.quick-nav a{flex:0 0 auto;min-height:3.5rem;display:flex;align-items:center;justify-content:center;gap:.45rem;padding:0 1rem;scroll-snap-align:start;color:var(--colour-text-muted);font-size:.76rem;font-weight:700;white-space:nowrap}
+.quick-nav svg{width:.9rem;height:.9rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.quick-nav a:first-child svg{fill:currentColor;stroke:none}
+.quick-nav a:hover,.quick-nav a.is-active{color:var(--colour-electric-green)}
+.fixture-grid,.results-grid,.standings-grid,.seed-lists{display:grid;gap:1rem}
+.media-grid{display:grid;gap:1rem}
+.story-track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.8rem;scrollbar-color:var(--colour-faded-green) transparent}
+.story-card{flex:0 0 min(78vw,20rem);scroll-snap-align:start}
+.site-footer__bottom{display:grid;gap:1rem}

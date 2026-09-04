@@ -1,0 +1,10 @@
+{
+  "name": "Hermanus Junior Squash Open 2026",
+  "short_name": "Hermanus Squash",
+  "description": "Live scores, matches and results from the Hermanus Junior Squash Open.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101d43",
+  "theme_color": "#192f64",
+  "icons": [{"src":"favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

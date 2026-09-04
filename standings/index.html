@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tournament Standings | Hermanus Junior Squash Open</title>
+  <meta name="description" content="Group-stage standings and knock-out results for the Hermanus Junior Squash Open.">
+  <meta name="theme-color" content="#192f64">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="../assets/images/Hermanus-Junior-Open-2026-Logo.png">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/variables.css?v=2">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css?v=2">
+  <link rel="stylesheet" href="../css/components.css?v=5">
+  <link rel="stylesheet" href="../css/court-feed.css?v=4">
+  <link rel="stylesheet" href="../css/tournament-feed.css?v=5">
+</head>
+<body class="tournament-feed-page" data-tournament-view="standings">
+  <a class="skip-link" href="#standings-feed">Skip to standings</a>
+  <header class="court-feed-header">
+    <div class="container court-feed-header__inner">
+      <a class="court-feed-brand" href="../index.html" aria-label="Hermanus Junior Squash Open public page">
+        <img class="court-feed-brand__padeuce" src="../assets/images/BJS-logo.png" width="1211" height="772" alt="Boland Junior Squash">
+        <span aria-hidden="true"></span>
+        <img class="court-feed-brand__event" src="../assets/images/Hermanus-Junior-Open-2026-Logo.png" width="1200" height="1200" alt="Hermanus Junior Squash Open">
+      </a>
+      <a class="button button--primary button--small" href="../admin/">Back to dashboard</a>
+    </div>
+  </header>
+  <main class="tournament-feed-main" id="standings-feed">
+    <div class="tournament-feed-backdrop" aria-hidden="true"></div>
+    <div class="container">
+      <article class="tournament-feed-panel">
+        <header class="tournament-feed-panel__header">
+          <div><p class="eyebrow">Tournament stages</p><h1>Standings &amp; Knock-out Results</h1></div>
+          <div class="tournament-feed-panel__actions">
+            <span class="tournament-feed-sync" data-tournament-feed-sync role="status">Updating tournament data…</span>
+            <a class="text-link external-link" data-feed-url="standingsUrl" href="https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results" target="_blank" rel="noopener noreferrer">Open in Padeuce ↗<span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </header>
+        <div class="tournament-stage-feed" data-standings-feed aria-live="polite"><p class="tournament-feed-loading">Loading round-robin standings and knock-out results…</p></div>
+      </article>
+    </div>
+  </main>
+  <script src="../js/feed-config.js?v=2"></script>
+  <script type="module" src="../js/tournament-feed.js?v=10"></script>
+</body>
+</html>

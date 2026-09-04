@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 260" role="img" aria-labelledby="title description">
+  <title id="title">Dagbreek Residence Padel Tournament</title>
+  <desc id="description">A rising sun above a padel court beside the tournament name.</desc>
+  <defs><linearGradient id="sun" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2c85f"/><stop offset="1" stop-color="#e2ad2e"/></linearGradient></defs>
+  <g transform="translate(24 24)">
+    <path d="M32 134a74 74 0 0 1 148 0" fill="none" stroke="url(#sun)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M106 14v24M30 46l18 18M182 46l-18 18M8 106h26M178 106h26" fill="none" stroke="#e2ad2e" stroke-width="9" stroke-linecap="round"/>
+    <path d="M20 142h172v72H20zM106 142v72M20 174h172" fill="none" stroke="#fffdf7" stroke-width="6"/>
+    <circle cx="150" cy="162" r="10" fill="#e2ad2e"/>
+  </g>
+  <g fill="#fffdf7" font-family="Montserrat,Arial,sans-serif" font-weight="900">
+    <text x="262" y="92" font-size="70" letter-spacing="2">DAGBREEK</text>
+    <text x="264" y="147" font-size="31" letter-spacing="6">RESIDENCE</text>
+  </g>
+  <rect x="262" y="171" width="660" height="58" rx="29" fill="#e2ad2e"/>
+  <text x="592" y="211" text-anchor="middle" fill="#000050" font-family="Montserrat,Arial,sans-serif" font-size="28" font-weight="900" letter-spacing="2">PADEL TOURNAMENT</text>
+</svg>

@@ -1,0 +1,25 @@
+@media(min-width:48rem){
+  .container{width:min(100% - 3rem,var(--container))}
+  .hero{min-height:37.5rem}.hero__content{grid-template-columns:minmax(0,1fr) minmax(15rem,21rem);align-items:start}.hero__event-brand{width:100%;margin-top:.25rem}.hero .event-status{grid-template-columns:repeat(4,minmax(0,1fr))}.hero .event-status div{border-right:1px solid var(--colour-border);border-bottom:0}.hero .event-status div:last-child{border-right:0}
+  .fixture-grid{grid-template-columns:repeat(2,1fr)}.results-grid,.standings-grid,.seed-lists,.public-standings-phase__grid,.public-knockout-draw-grid{grid-template-columns:repeat(2,1fr)}
+  .court-embeds{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .media-grid{grid-template-columns:repeat(3,1fr)}.media-card--featured{grid-column:1/-1;display:grid;grid-template-columns:1.4fr 1fr}.media-card--featured .media-card__image{aspect-ratio:auto}
+  .story-card{flex-basis:18rem}
+  .site-footer__bottom{grid-template-columns:1fr auto auto;align-items:center}
+}
+@media(min-width:64rem){
+  .site-header{height:5rem}.site-header.is-scrolled{height:4rem}
+  .quick-nav{top:4rem}.quick-nav__track{justify-content:space-between}.quick-nav a{padding-inline:.5rem}
+  .section{padding:7rem 0}.section-heading{margin-bottom:2.5rem}
+  .court-embeds{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .live-score__body{padding:2rem 2.5rem}.live-score__top,.live-score__bottom{padding:1.25rem 2.5rem}.live-score__bottom{flex-direction:row;align-items:center}.live-score__team{grid-template-columns:minmax(18rem,1fr) 10rem 8rem}.live-score__names{font-size:1.3rem}.live-score__sets{font-size:1.7rem}
+  .fixture-grid{grid-template-columns:repeat(3,1fr)}.filter-group{grid-template-columns:1fr auto;align-items:center}
+  .media-card--featured{min-height:27rem}.story-card{flex-basis:calc((100% - 3rem)/4)}
+  .mobile-live-shortcut{display:none}
+}
+@media(min-width:90rem){
+  .hero{min-height:41.25rem}.hero__content{grid-template-columns:minmax(0,1fr) 23rem}.fixture-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:39.99rem){
+  .site-header__inner{gap:.35rem}.site-header .brand__logo{height:2.65rem}.site-header__event-logo{height:1.15rem}.site-header__logo-divider{height:1.3rem}.site-header__actions{gap:.3rem}.site-header__actions .button{min-height:2.35rem;padding:.45rem .55rem;font-size:.68rem}.share-label--full{display:none}.share-label--short{display:inline}
+}
