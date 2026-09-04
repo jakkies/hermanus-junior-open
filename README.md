@@ -27,7 +27,7 @@ Shared SportyHQ feed URLs are configured in `js/feed-config.js`. An organiser ca
 
 ## Automatic SportyHQ result sync
 
-The `Sync SportyHQ results` GitHub Actions workflow reads all four official court feeds every five minutes during 4–6 September 2026. It preserves captured finals, replaces stale live rows and commits `js/captured-results.json` only when scores change. The public schedule checks that snapshot every minute; completed matches also recalculate the round-robin standings automatically. The workflow can be run manually at any time from the repository's Actions page.
+The local `Sync Hermanus SportyHQ results` scheduled task reads all four official court feeds every five minutes during 4–6 September 2026. It preserves captured finals, replaces stale live rows and commits `js/captured-results.json` to `main` only when scores change. The public schedule checks that snapshot every minute; completed matches also recalculate the round-robin standings automatically.
 
 For a local one-off sync, install the dependency with `npm ci` and run `npm run sync:sportyhq`. Rankings use match wins, game percentage, point percentage, games won, points won and original box position, in that order. Live or incomplete matches are excluded from the standings.
 
