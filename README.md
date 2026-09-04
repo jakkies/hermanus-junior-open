@@ -25,9 +25,11 @@ The site is ready for tournament content, but these event-specific details are p
 
 Shared SportyHQ feed URLs are configured in `js/feed-config.js`. An organiser can temporarily override them in one browser at `admin/settings/`.
 
-## Capturing SportyHQ results
+## Automatic SportyHQ result sync
 
-Add current matches to `js/captured-results.json` and set `capturedAt` to the SportyHQ capture date and time. The same records update the schedule and calculate the relevant round-robin standings automatically; an open page checks the file every minute. Each result uses `division`, `a`, `b`, `scoreA`, `scoreB`, `winner` (`a` or `b`) and `status` (`Completed` or `Live`). Scores may contain each game's points (for example, `"11 8 11 11"`) or a games tally (for example, `"3"`). Rankings use match wins, game percentage, point percentage, games won, points won and original box position, in that order. Live or incomplete matches are excluded from the standings.
+The `Sync SportyHQ results` GitHub Actions workflow reads all four official court feeds every five minutes during 4–6 September 2026. It preserves captured finals, replaces stale live rows and commits `js/captured-results.json` only when scores change. The public schedule checks that snapshot every minute; completed matches also recalculate the round-robin standings automatically. The workflow can be run manually at any time from the repository's Actions page.
+
+For a local one-off sync, install the dependency with `npm ci` and run `npm run sync:sportyhq`. Rankings use match wins, game percentage, point percentage, games won, points won and original box position, in that order. Live or incomplete matches are excluded from the standings.
 
 ## Pages
 

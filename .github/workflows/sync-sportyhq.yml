@@ -1,0 +1,67 @@
+name: Sync SportyHQ results
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * 4-6 9 *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-sportyhq-results
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check tournament window
+        id: window
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "active=true" >> "$GITHUB_OUTPUT"
+          elif [[ "$(TZ=Africa/Johannesburg date +%Y-%m-%d)" =~ ^2026-09-0[4-6]$ ]]; then
+            echo "active=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "active=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out main
+        if: steps.window.outputs.active == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Node.js
+        if: steps.window.outputs.active == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install sync dependency
+        if: steps.window.outputs.active == 'true'
+        run: npm ci
+
+      - name: Read SportyHQ court feeds
+        if: steps.window.outputs.active == 'true'
+        env:
+          PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH: /usr/bin/google-chrome
+        run: npm run sync:sportyhq
+
+      - name: Commit updated results
+        if: steps.window.outputs.active == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet -- js/captured-results.json; then
+            echo "SportyHQ has no new score changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/captured-results.json
+          git commit -m "Auto-sync SportyHQ results"
+          git push origin main

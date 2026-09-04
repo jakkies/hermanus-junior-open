@@ -1,0 +1,12 @@
+{
+  "name": "hermanus-junior-open",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "sync:sportyhq": "node scripts/sync-sportyhq.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.62.1"
+  }
+}
