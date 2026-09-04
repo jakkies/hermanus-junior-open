@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const API_BASE = "https://padeuce.com/api";
+  const API_BASE = "https://sportyhq.com";
   const REFRESH_INTERVAL = 15000;
   const REQUEST_TIMEOUT = 8000;
   const PLACEHOLDER_CLUB_ID = "hermanus-junior-squash-open";
@@ -26,8 +26,8 @@
 
   function courtTarget(root) {
     const key = root.dataset.courtFeed || `court${root.dataset.courtScore || "1"}Url`;
-    const url = window.PadeuceFeedConfig?.get?.()[key];
-    return window.PadeuceFeedConfig?.parseCourtUrl?.(url) || defaultCourts[key] || {
+    const url = window.TournamentFeedConfig?.get?.()[key];
+    return window.TournamentFeedConfig?.parseCourtUrl?.(url) || defaultCourts[key] || {
       clubId: defaultCourts.court1Url.clubId,
       court: root.dataset.courtScore
     };
@@ -162,7 +162,7 @@
   function renderMatch(root, courtMatch, payload, completed = false) {
     const match = payload.match || {};
     const score = payload.score || {};
-    const format = window.PadeuceScoreFormat?.describe?.(match, score) || {
+    const format = window.TournamentScoreFormat?.describe?.(match, score) || {
       kind: "sets",
       columns: ["Player", "Set 1", "Set 2", "Sets", "Games", "Points"],
       label: match.ruleset?.name || "Live scoring"
@@ -282,7 +282,7 @@
     const summary = completed && typeof completed === "object" ? completed : {};
     const fallback = { match: summary, score: summary.score || {} };
     const matchId = summary.matchId || summary.id || summary.score?.matchId;
-    if (!matchId || window.PadeuceScoreFormat?.rulesetConfig?.(summary)) return fallback;
+    if (!matchId || window.TournamentScoreFormat?.rulesetConfig?.(summary)) return fallback;
 
     try {
       const payload = await fetchJSON(`${API_BASE}/match/${encodeURIComponent(matchId)}`);
@@ -378,7 +378,7 @@
       refreshScores();
       connectClubStream();
     });
-    window.addEventListener(window.PadeuceFeedConfig?.CHANGE_EVENT || "padeuce:feed-config-change", () => {
+    window.addEventListener(window.TournamentFeedConfig?.CHANGE_EVENT || "tournament:feed-config-change", () => {
       closeStreams();
       refreshScores();
       connectClubStream();

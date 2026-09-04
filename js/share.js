@@ -26,7 +26,7 @@ export function initialiseSharing() {
   document.addEventListener("click", async event => {
     const button = event.target.closest("[data-share]");
     if (!button) return;
-    const data = { title: button.dataset.shareTitle || document.title, text: "Follow the Hermanus Junior Squash Open live with Padeuce.", url: button.dataset.shareUrl || window.location.href };
+    const data = { title: button.dataset.shareTitle || document.title, text: "Follow the Hermanus Junior Squash Open live.", url: button.dataset.shareUrl || window.location.href };
     try {
       if (navigator.share) await navigator.share(data);
       else await fallbackCopy(data.url);

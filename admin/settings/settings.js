@@ -1,7 +1,7 @@
 (function initialiseFeedSettingsPage() {
   "use strict";
 
-  const configApi = window.PadeuceFeedConfig;
+  const configApi = window.TournamentFeedConfig;
   const form = document.querySelector("[data-feed-settings-form]");
   const resetButton = document.querySelector("[data-reset-feed-settings]");
   const status = document.querySelector("[data-settings-status]");
@@ -39,10 +39,10 @@
   function connectionLabel(key, value) {
     if (/^court[1-4]Url$/.test(key)) {
       const court = configApi.parseCourtUrl(value);
-      return court ? `Club ${court.clubId} · Court ${court.court}` : "Invalid court URL";
+      return court ? `Tournament ${court.tournamentId} · Court feed ${court.court}` : "Invalid court URL";
     }
     const tournament = configApi.parseTournamentUrl(value);
-    return tournament ? `Club ${tournament.clubId} · Tournament ${tournament.tournamentId}` : "Invalid tournament URL";
+    return tournament ? `SportyHQ tournament ${tournament.tournamentId} · ${tournament.view}` : "Invalid tournament URL";
   }
 
   function updateConnections(values) {

@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/layout.css?v=2">
   <link rel="stylesheet" href="../../css/components.css?v=5">
-  <link rel="stylesheet" href="../admin.css?v=6">
+  <link rel="stylesheet" href="../admin.css?v=8">
   <link rel="stylesheet" href="settings.css?v=2">
 </head>
 <body class="admin-page settings-page">
@@ -24,7 +24,7 @@
   <header class="admin-header">
     <div class="container admin-header__inner">
       <a class="admin-brand" href="../index.html" aria-label="Tournament dashboard">
-        <img class="admin-brand__padeuce" src="../../assets/images/BJS-logo.png" width="1211" height="772" alt="Boland Junior Squash">
+        <img class="admin-brand__primary" src="../../assets/images/BJS-logo-transparent.png" width="1130" height="660" alt="Boland Junior Squash">
       </a>
       <div class="admin-header__actions">
         <a class="button button--ghost button--small" href="../index.html">Dashboard</a>
@@ -40,7 +40,7 @@
         <div class="settings-heading">
           <p class="eyebrow">Tournament administration</p>
           <h1 id="settings-title">Feed settings</h1>
-          <p>Paste the Padeuce URLs used by the live courts, tournament schedule and standings.</p>
+          <p>Paste the SportyHQ URLs used by the live courts, tournament schedule and standings.</p>
         </div>
 
         <div class="settings-notice">
@@ -53,7 +53,7 @@
             <label class="settings-field" for="court-1-url">
               <span>Court 1 URL</span>
               <input id="court-1-url" name="court1Url" type="url" inputmode="url" autocomplete="url" spellcheck="false" required aria-describedby="court-1-help court-1-error">
-              <small id="court-1-help">Example: https://padeuce.com/club/club-id/1</small>
+              <small id="court-1-help">Example: https://sportyhq.com/tournament/tv_scores/27429/10660</small>
               <em id="court-1-error" data-error-for="court1Url"></em>
             </label>
 
@@ -118,7 +118,7 @@
     </div>
   </main>
 
-  <script src="../../js/feed-config.js?v=2"></script>
-  <script src="settings.js?v=2"></script>
+  <script src="../../js/feed-config.js?v=3"></script>
+  <script src="settings.js?v=3"></script>
 </body>
 </html>

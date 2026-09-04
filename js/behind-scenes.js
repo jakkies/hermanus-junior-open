@@ -1,6 +1,6 @@
 import bundledSnapshot from "./behind-scenes-snapshot.js";
 
-const EVENT_ACCOUNT = "https://padeuce.com/";
+const EVENT_ACCOUNT = "https://sportyhq.com/tournament/tv_display/27429";
 
 function snapshotUrls() {
   const sources = [];

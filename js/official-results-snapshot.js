@@ -1,6 +1,6 @@
 // Empty fallback used while the Hermanus tournament is waiting for new fixtures.
-const resultsUrl = globalThis.PadeuceFeedConfig?.get?.().scheduleUrl ||
-  "https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results";
+const resultsUrl = globalThis.TournamentFeedConfig?.get?.().scheduleUrl ||
+  "https://sportyhq.com/tournament/tv_display/27429";
 
 export default {
   source: resultsUrl,

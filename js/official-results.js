@@ -1,23 +1,22 @@
 import bundledSnapshot from "./official-results-snapshot.js?v=3";
 import { calculateStandings, mergeCapturedResults } from "./standings-calculator.js?v=1";
 
-const API_BASE = "https://padeuce.com/api";
 const DEFAULT_RESULTS_URL =
-  "https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results";
+  "https://sportyhq.com/tournament/tv_display/27429";
 const CAPTURED_RESULTS_URL = new URL("./captured-results.json", import.meta.url);
 
 function configuredUrl(key) {
-  return globalThis.PadeuceFeedConfig?.get?.()[key] || DEFAULT_RESULTS_URL;
+  return globalThis.TournamentFeedConfig?.get?.()[key] || DEFAULT_RESULTS_URL;
 }
 
 function tournamentTarget(key) {
   const value = configuredUrl(key);
-  const configured = globalThis.PadeuceFeedConfig?.parseTournamentUrl?.(value);
+  const configured = globalThis.TournamentFeedConfig?.parseTournamentUrl?.(value);
   if (configured) return configured;
   const url = new URL(value);
-  const match = url.pathname.match(/^\/club\/([^/]+)\/tournament\/([^/]+)\/results\/?$/i);
+  const match = url.pathname.match(/^\/tournament\/(tv_display|tv_draws)\/(\d+)\/?$/i);
   if (!match) throw new Error(`Invalid ${key} tournament URL`);
-  return { url: url.toString(), clubId: decodeURIComponent(match[1]), tournamentId: decodeURIComponent(match[2]) };
+  return { url: url.toString(), view: match[1], tournamentId: match[2] };
 }
 
 const teamName = team => [team?.player1Name, team?.player2Name].filter(Boolean).join(" / ");
@@ -108,9 +107,7 @@ function mapStage(stage, teams, liveShareCodes, resultsUrl) {
         scoreA: scoreText(match.teamASets),
         scoreB: scoreText(match.teamBSets),
         winner: match.winnerTeamId === match.teamAId ? "a" : match.winnerTeamId === match.teamBId ? "b" : "",
-        url: match.scorerShareCode
-          ? `https://padeuce.com/match/${encodeURIComponent(match.scorerShareCode)}/results`
-          : resultsUrl
+        url: resultsUrl
       };
     });
     return {
@@ -195,67 +192,30 @@ function withCapturedResults(snapshot, capture) {
   };
 }
 
-async function fetchTournament(target) {
-  const progress = await fetchJSON(
-    `${API_BASE}/club/${encodeURIComponent(target.clubId)}/tournament/${encodeURIComponent(target.tournamentId)}/progress`
-  );
-  const club = await fetchJSON(`${API_BASE}/club/${encodeURIComponent(target.clubId)}`).catch(() => ({}));
-  return mapTournamentProgress(progress, club, target.url);
-}
-
-async function fetchJSON(url) {
-  const response = await fetch(url, {
-    cache: "no-store",
-    headers: { Accept: "application/json" }
-  });
-  if (!response.ok) throw new Error(`Tournament data returned ${response.status}`);
-  return response.json();
-}
-
 export async function loadOfficialResults() {
   const capture = await loadCapturedResults();
   const scheduleTarget = tournamentTarget("scheduleUrl");
   const standingsTarget = tournamentTarget("standingsUrl");
-  try {
-    const isSameTournament = scheduleTarget.clubId === standingsTarget.clubId &&
-      scheduleTarget.tournamentId === standingsTarget.tournamentId;
-    if (isSameTournament) return withCapturedResults(await fetchTournament(scheduleTarget), capture);
-
-    const [schedule, standings] = await Promise.all([
-      fetchTournament(scheduleTarget),
-      fetchTournament(standingsTarget)
-    ]);
-    return withCapturedResults({
-      ...schedule,
-      standings: standings.standings,
-      standingsStages: standings.stages,
-      standingsSource: standingsTarget.url,
-      isTournamentEmpty: schedule.isTournamentEmpty && standings.isTournamentEmpty,
-      isBundledSnapshot: false
-    }, capture);
-  } catch (error) {
-    console.warn("Using the empty tournament fallback:", error);
-    const retargetStages = (stages, url) => (stages || []).map(stage => ({
-      ...stage,
-      fixtures: (stage.fixtures || []).map(fixture => ({ ...fixture, url })),
-      rounds: (stage.rounds || []).map(round => ({
-        ...round,
-        matches: (round.matches || []).map(fixture => ({ ...fixture, url }))
-      }))
-    }));
-    const scheduleStages = retargetStages(bundledSnapshot.stages, scheduleTarget.url);
-    const standingsStages = retargetStages(bundledSnapshot.standingsStages || bundledSnapshot.stages, standingsTarget.url);
-    return withCapturedResults({
-      ...bundledSnapshot,
-      source: scheduleTarget.url,
-      standingsSource: standingsTarget.url,
-      stages: scheduleStages,
-      standingsStages,
-      fixtures: scheduleStages.length
-        ? scheduleStages.flatMap(stage => stage.fixtures)
-        : bundledSnapshot.fixtures.map(fixture => ({ ...fixture, url: scheduleTarget.url })),
-      isTournamentEmpty: true,
-      isBundledSnapshot: true
-    }, capture);
-  }
+  const retargetStages = (stages, url) => (stages || []).map(stage => ({
+    ...stage,
+    fixtures: (stage.fixtures || []).map(fixture => ({ ...fixture, url })),
+    rounds: (stage.rounds || []).map(round => ({
+      ...round,
+      matches: (round.matches || []).map(fixture => ({ ...fixture, url }))
+    }))
+  }));
+  const scheduleStages = retargetStages(bundledSnapshot.stages, scheduleTarget.url);
+  const standingsStages = retargetStages(bundledSnapshot.standingsStages || bundledSnapshot.stages, standingsTarget.url);
+  return withCapturedResults({
+    ...bundledSnapshot,
+    source: scheduleTarget.url,
+    standingsSource: standingsTarget.url,
+    stages: scheduleStages,
+    standingsStages,
+    fixtures: scheduleStages.length
+      ? scheduleStages.flatMap(stage => stage.fixtures)
+      : bundledSnapshot.fixtures.map(fixture => ({ ...fixture, url: scheduleTarget.url })),
+    isTournamentEmpty: true,
+    isBundledSnapshot: true
+  }, capture);
 }

@@ -1,8 +1,8 @@
 # Hermanus Junior Squash Open 2026
 
-Static Padeuce mini-site duplicated from the Dagbreek tournament site and reworked for the Hermanus Junior Squash Open, 4–6 September 2026.
+Static tournament site for the Hermanus Junior Squash Open, 4–5 September 2026.
 
-The bundled site starts with an empty tournament snapshot. Add the event's Padeuce court and tournament URLs under `admin/settings/` when they are available.
+The bundled site uses the official SportyHQ court, schedule and draw URLs. They can be updated under `admin/settings/` when required.
 
 ## Preview locally
 
@@ -23,7 +23,7 @@ The site is ready for tournament content, but these event-specific details are p
 - default Court 1–4, schedule and standings URLs in `js/feed-config.js`;
 - competing teams in `js/data.js`;
 
-Shared Padeuce feed URLs are configured in `js/feed-config.js`. An organiser can temporarily override them in one browser at `admin/settings/`.
+Shared SportyHQ feed URLs are configured in `js/feed-config.js`. An organiser can temporarily override them in one browser at `admin/settings/`.
 
 ## Capturing SportyHQ results
 
@@ -38,4 +38,4 @@ Add completed matches to `js/captured-results.json` and set `capturedAt` to the 
 - `/schedule/` — full schedule
 - `/standings/` — tournament standings
 - `/admin/` — organiser dashboard
-- `/admin/settings/` — browser-local Padeuce feed configuration
+- `/admin/settings/` — browser-local SportyHQ feed configuration

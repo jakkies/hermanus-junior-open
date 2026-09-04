@@ -138,6 +138,6 @@
   }
 
   const api = { describe, rulesetConfig, completedScoreFormat };
-  root.PadeuceScoreFormat = api;
+  root.TournamentScoreFormat = api;
   if (typeof module === "object" && module.exports) module.exports = api;
 })(typeof window === "object" ? window : globalThis);

@@ -21,5 +21,5 @@
   .hero{min-height:41.25rem}.hero__content{grid-template-columns:minmax(0,1fr) 23rem}.fixture-grid{grid-template-columns:repeat(4,1fr)}
 }
 @media(max-width:39.99rem){
-  .site-header__inner{gap:.35rem}.site-header .brand__logo{height:2.65rem}.site-header__event-logo{height:1.15rem}.site-header__logo-divider{height:1.3rem}.site-header__actions{gap:.3rem}.site-header__actions .button{min-height:2.35rem;padding:.45rem .55rem;font-size:.68rem}.share-label--full{display:none}.share-label--short{display:inline}
+  .site-header__inner{gap:.35rem}.site-header .brand__logo{height:2.65rem}.site-header__event-logo{height:1.4375rem;margin-left:.4rem}.site-header__logo-divider{height:1.3rem}.site-header__actions{gap:.3rem}.site-header__actions .button{min-height:2.35rem;padding:.45rem .55rem;font-size:.68rem}.share-label--full{display:none}.share-label--short{display:inline}
 }

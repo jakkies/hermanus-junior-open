@@ -1,6 +1,6 @@
-import { loadOfficialResults } from "./official-results.js?v=7";
+import { loadOfficialResults } from "./official-results.js?v=8";
 
-const DEFAULT_RESULTS_URL = "https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results";
+const DEFAULT_RESULTS_URL = "https://sportyhq.com/tournament/tv_display/27429";
 const REFRESH_INTERVAL = 60 * 1000;
 let refreshTimer;
 
@@ -33,7 +33,7 @@ function renderMatch(match) {
   const hasScore = Boolean(match.scoreA || match.scoreB);
   const result = hasScore ? formatMatchScore(match.scoreA, match.scoreB) : "vs";
   return `
-    <a class="schedule-feed-match" href="${escapeHTML(match.url || globalThis.PadeuceFeedConfig?.get?.().scheduleUrl || DEFAULT_RESULTS_URL)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHTML(match.a)} versus ${escapeHTML(match.b)}">
+    <a class="schedule-feed-match" href="${escapeHTML(match.url || globalThis.TournamentFeedConfig?.get?.().scheduleUrl || DEFAULT_RESULTS_URL)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHTML(match.a)} versus ${escapeHTML(match.b)}">
       <span class="schedule-feed-match__meta"><b>${escapeHTML(match.group || match.division)}</b><span>${escapeHTML(match.status)}</span><span>${escapeHTML(match.court)}</span></span>
       <span class="schedule-feed-match__court">${courtNumber(match.court)}</span>
       ${team(match.a, match.winner === "a")}
@@ -140,7 +140,7 @@ async function refresh() {
 
 refresh();
 refreshTimer = window.setInterval(refresh, REFRESH_INTERVAL);
-window.addEventListener(globalThis.PadeuceFeedConfig?.CHANGE_EVENT || "padeuce:feed-config-change", refresh);
+window.addEventListener(globalThis.TournamentFeedConfig?.CHANGE_EVENT || "tournament:feed-config-change", refresh);
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     window.clearInterval(refreshTimer);

@@ -1,4 +1,4 @@
-import officialResultsSnapshot from "./official-results-snapshot.js?v=3";
+import officialResultsSnapshot from "./official-results-snapshot.js?v=4";
 
 // Static event content with a bundled fallback for the live tournament feed.
 export const API_CONFIG = {
@@ -11,8 +11,8 @@ export const API_CONFIG = {
 export const eventData = {
   id: "hermanus-junior-squash-open-2026", name: "Hermanus Junior Squash Open 2026", competition: "Junior Squash",
   city: "Hermanus", country: "South Africa", status: "upcoming",
-  officialUrl: globalThis.PadeuceFeedConfig?.get?.().scheduleUrl ||
-    "https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results"
+  officialUrl: globalThis.TournamentFeedConfig?.get?.().scheduleUrl ||
+    "https://sportyhq.com/tournament/tv_display/27429"
 };
 
 export const liveMatches = [];

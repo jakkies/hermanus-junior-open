@@ -2,14 +2,14 @@
   "use strict";
 
   const STORAGE_KEY = "hermanus-junior-squash-open-feed-settings-v1";
-  const CHANGE_EVENT = "padeuce:feed-config-change";
+  const CHANGE_EVENT = "tournament:feed-config-change";
   const defaults = Object.freeze({
-    court1Url: "https://padeuce.com/club/hermanus-junior-squash-open/1",
-    court2Url: "https://padeuce.com/club/hermanus-junior-squash-open/2",
-    court3Url: "https://padeuce.com/club/hermanus-junior-squash-open/3",
-    court4Url: "https://padeuce.com/club/hermanus-junior-squash-open/4",
-    scheduleUrl: "https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results",
-    standingsUrl: "https://padeuce.com/club/hermanus-junior-squash-open/tournament/hermanus-junior-open-2026/results"
+    court1Url: "https://sportyhq.com/tournament/tv_scores/27429/10660",
+    court2Url: "https://sportyhq.com/tournament/tv_scores/27429/10661",
+    court3Url: "https://sportyhq.com/tournament/tv_scores/27429/10662",
+    court4Url: "https://sportyhq.com/tournament/tv_scores/27429/10663",
+    scheduleUrl: "https://sportyhq.com/tournament/tv_display/27429",
+    standingsUrl: "https://sportyhq.com/tournament/tv_draws/27429"
   });
 
   function storage() {
@@ -26,7 +26,7 @@
 
   function normaliseUrl(value) {
     const url = new URL(String(value || "").trim());
-    if (!/(^|\.)padeuce\.com$/i.test(url.hostname)) throw new Error("Use a padeuce.com URL.");
+    if (!/(^|\.)sportyhq\.com$/i.test(url.hostname)) throw new Error("Use a sportyhq.com URL.");
     url.hash = "";
     return url.toString();
   }
@@ -34,12 +34,12 @@
   function parseCourtUrl(value) {
     try {
       const url = new URL(normaliseUrl(value));
-      const match = url.pathname.match(/^\/club\/([^/]+)\/([^/]+)\/?$/i);
-      if (!match || /^tournament$/i.test(match[2])) return null;
+      const match = url.pathname.match(/^\/tournament\/tv_scores\/(\d+)\/(\d+)\/?$/i);
+      if (!match) return null;
       return {
         url: url.toString(),
-        clubId: decodeURIComponent(match[1]),
-        court: decodeURIComponent(match[2])
+        tournamentId: match[1],
+        court: match[2]
       };
     } catch {
       return null;
@@ -49,12 +49,12 @@
   function parseTournamentUrl(value) {
     try {
       const url = new URL(normaliseUrl(value));
-      const match = url.pathname.match(/^\/club\/([^/]+)\/tournament\/([^/]+)\/results\/?$/i);
+      const match = url.pathname.match(/^\/tournament\/(tv_display|tv_draws)\/(\d+)\/?$/i);
       if (!match) return null;
       return {
         url: url.toString(),
-        clubId: decodeURIComponent(match[1]),
-        tournamentId: decodeURIComponent(match[2])
+        view: match[1],
+        tournamentId: match[2]
       };
     } catch {
       return null;
@@ -77,20 +77,20 @@
     const schedule = parseTournamentUrl(candidate.scheduleUrl);
     const standings = parseTournamentUrl(candidate.standingsUrl);
 
-    if (!court1) errors.court1Url = "Enter a valid Padeuce court URL.";
-    if (!court2) errors.court2Url = "Enter a valid Padeuce court URL.";
-    if (!court3) errors.court3Url = "Enter a valid Padeuce court URL.";
-    if (!court4) errors.court4Url = "Enter a valid Padeuce court URL.";
-    if (!schedule) errors.scheduleUrl = "Enter a valid Padeuce tournament results URL.";
-    if (!standings) errors.standingsUrl = "Enter a valid Padeuce tournament results URL.";
-    if (court1 && court2 && court1.clubId !== court2.clubId) {
-      errors.court2Url = "Both court feeds must belong to the same Padeuce club.";
+    if (!court1) errors.court1Url = "Enter a valid SportyHQ court URL.";
+    if (!court2) errors.court2Url = "Enter a valid SportyHQ court URL.";
+    if (!court3) errors.court3Url = "Enter a valid SportyHQ court URL.";
+    if (!court4) errors.court4Url = "Enter a valid SportyHQ court URL.";
+    if (!schedule) errors.scheduleUrl = "Enter a valid SportyHQ tournament display URL.";
+    if (!standings) errors.standingsUrl = "Enter a valid SportyHQ tournament draws URL.";
+    if (court1 && court2 && court1.tournamentId !== court2.tournamentId) {
+      errors.court2Url = "Both court feeds must belong to the same SportyHQ tournament.";
     }
-    if (court1 && court3 && court1.clubId !== court3.clubId) {
-      errors.court3Url = "All court feeds must belong to the same Padeuce club.";
+    if (court1 && court3 && court1.tournamentId !== court3.tournamentId) {
+      errors.court3Url = "All court feeds must belong to the same SportyHQ tournament.";
     }
-    if (court1 && court4 && court1.clubId !== court4.clubId) {
-      errors.court4Url = "All court feeds must belong to the same Padeuce club.";
+    if (court1 && court4 && court1.tournamentId !== court4.tournamentId) {
+      errors.court4Url = "All court feeds must belong to the same SportyHQ tournament.";
     }
     if (court1 && court2 && String(court1.court).toLowerCase() === String(court2.court).toLowerCase()) {
       errors.court2Url = "Select a different court feed for Court 2.";
@@ -184,7 +184,7 @@
     applyLinks
   };
 
-  root.PadeuceFeedConfig = api;
+  root.TournamentFeedConfig = api;
   if (typeof module === "object" && module.exports) module.exports = api;
 
   if (root.document) {
