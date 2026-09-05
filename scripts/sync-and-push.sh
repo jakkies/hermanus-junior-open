@@ -18,7 +18,10 @@ fi
 
 cd "$PROJECT_DIR"
 
-/usr/bin/git pull --ff-only origin main
+# Rebase any score commit left behind by a previous push race. Website deploys
+# can advance main while this job is capturing SportyHQ, so ff-only would leave
+# every later run permanently blocked.
+/usr/bin/git pull --rebase origin main
 
 if [[ ! -d node_modules || package-lock.json -nt node_modules/.package-lock.json ]]; then
   /usr/local/bin/npm ci
@@ -41,4 +44,11 @@ fi
 /usr/bin/git config user.email "jakkies@Jakkies-MacBook-Pro-2.local"
 /usr/bin/git add "$RESULTS_FILE"
 /usr/bin/git commit -m "Auto-sync SportyHQ results"
-/usr/bin/git push origin main
+
+# A deployment can still land between the pull and this push. Rebase and retry
+# once so the score update is published without overwriting that deployment.
+if ! /usr/bin/git push origin main; then
+  echo "Remote main advanced during score capture; rebasing and retrying."
+  /usr/bin/git pull --rebase origin main
+  /usr/bin/git push origin main
+fi
