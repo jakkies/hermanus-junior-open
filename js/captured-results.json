@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 08:13 SAST",
+  "capturedAt": "5 September 2026, 08:21 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -245,8 +245,8 @@
       "division": "U15 Boys",
       "a": "Christoff Kruger",
       "b": "Umar Tootla",
-      "scoreA": "5",
-      "scoreB": "4",
+      "scoreA": "6",
+      "scoreB": "7",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
@@ -255,8 +255,8 @@
       "division": "U15 Boys",
       "a": "Christiaan Shaw",
       "b": "Christiaan Krige",
-      "scoreA": "11",
-      "scoreB": "5",
+      "scoreA": "11, 13",
+      "scoreB": "5, 15",
       "winner": "",
       "status": "Live",
       "court": "Court 2"
@@ -265,8 +265,8 @@
       "division": "U15 Boys",
       "a": "Reuben Bekker",
       "b": "Sa-ad Tootla",
-      "scoreA": "11",
-      "scoreB": "7",
+      "scoreA": "11, 6",
+      "scoreB": "7, 11",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
@@ -275,8 +275,8 @@
       "division": "U15 Boys",
       "a": "Livia Roodt",
       "b": "Johan Pretorius",
-      "scoreA": "6",
-      "scoreB": "7",
+      "scoreA": "6, 4, 1",
+      "scoreB": "11, 11, 2",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
