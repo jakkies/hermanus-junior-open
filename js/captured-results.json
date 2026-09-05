@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 15:27 SAST",
+  "capturedAt": "5 September 2026, 15:35 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -663,10 +663,20 @@
     },
     {
       "division": "U17 Boys",
+      "a": "Milton Posthumus",
+      "b": "Omri Beets",
+      "scoreA": "",
+      "scoreB": "",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 1"
+    },
+    {
+      "division": "U17 Boys",
       "a": "NicolaasW Rust",
       "b": "Stephanus Kruger",
-      "scoreA": "11, 5",
-      "scoreB": "9, 4",
+      "scoreA": "11, 11, 10",
+      "scoreB": "9, 4, 4",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
@@ -675,8 +685,8 @@
       "division": "U17 Boys",
       "a": "Denwill May",
       "b": "Janno Kruger",
-      "scoreA": "11, 11",
-      "scoreB": "6, 7",
+      "scoreA": "11, 11, 3, 1",
+      "scoreB": "6, 7, 11, 1",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
