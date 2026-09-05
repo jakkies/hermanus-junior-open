@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 14:14 SAST",
+  "capturedAt": "5 September 2026, 14:22 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -582,6 +582,36 @@
       "court": "Court 1"
     },
     {
+      "division": "U17 Boys Play-off (Position 10-12)",
+      "a": "Jade Plaatjies",
+      "b": "Jamaine Saaiman",
+      "scoreA": "11, 8, 11, 6, 13",
+      "scoreB": "4, 11, 2, 11, 15",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 2"
+    },
+    {
+      "division": "U17 Boys",
+      "a": "Oliver Moyo",
+      "b": "Janno Kruger",
+      "scoreA": "11, 11, 10, 5, 14",
+      "scoreB": "4, 7, 12, 11, 12",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 3"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Yanu Koorts",
+      "b": "Sahil Khalfey",
+      "scoreA": "7, 5, 5",
+      "scoreB": "11, 11, 10",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 4"
+    },
+    {
       "division": "U17 Boys",
       "a": "Molibeli Mathibeli",
       "b": "Omri Beets",
@@ -592,41 +622,11 @@
       "court": "Court 1"
     },
     {
-      "division": "U17 Boys Play-off (Position 10-12)",
-      "a": "Jade Plaatjies",
-      "b": "Jamaine Saaiman",
-      "scoreA": "11, 8, 11, 6, 7",
-      "scoreB": "4, 11, 2, 11, 4",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 2"
-    },
-    {
-      "division": "U17 Boys",
-      "a": "Oliver Moyo",
-      "b": "Janno Kruger",
-      "scoreA": "11, 11, 10, 5, 12",
-      "scoreB": "4, 7, 12, 11, 11",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 3"
-    },
-    {
       "division": "U17 Boys",
       "a": "Likhanye Mayile",
       "b": "Stephanus Kruger",
-      "scoreA": "11, 10",
-      "scoreB": "8, 8",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 4"
-    },
-    {
-      "division": "U19 Boys",
-      "a": "Yanu Koorts",
-      "b": "Sahil Khalfey",
-      "scoreA": "7, 5, 4",
-      "scoreB": "11, 11, 7",
+      "scoreA": "11, 13, 6",
+      "scoreB": "8, 11, 5",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
