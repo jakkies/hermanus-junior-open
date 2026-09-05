@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 13:44 SAST",
+  "capturedAt": "5 September 2026, 13:51 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -585,8 +585,8 @@
       "division": "U17 Boys Play-off (Position 10-12)",
       "a": "Jade Plaatjies",
       "b": "Jamaine Saaiman",
-      "scoreA": "2",
-      "scoreB": "0",
+      "scoreA": "11, 6",
+      "scoreB": "4, 9",
       "winner": "",
       "status": "Live",
       "court": "Court 2"
@@ -595,8 +595,8 @@
       "division": "U17 Boys",
       "a": "Oliver Moyo",
       "b": "Janno Kruger",
-      "scoreA": "2",
-      "scoreB": "0",
+      "scoreA": "11",
+      "scoreB": "4",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
@@ -605,8 +605,8 @@
       "division": "U19 Boys",
       "a": "Yanu Koorts",
       "b": "Sahil Khalfey",
-      "scoreA": "7, 5, 2",
-      "scoreB": "11, 11, 2",
+      "scoreA": "7, 5, 4",
+      "scoreB": "11, 11, 7",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
