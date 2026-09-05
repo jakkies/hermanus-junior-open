@@ -1,5 +1,5 @@
 {
-  "capturedAt": "4 September 2026, 19:26 SAST",
+  "capturedAt": "5 September 2026, 08:09 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -242,31 +242,31 @@
       "court": "Court 4"
     },
     {
-      "division": "U19 Boys",
-      "a": "Yanu Koorts",
-      "b": "Jesse Swart",
-      "scoreA": "11, 11, 3",
-      "scoreB": "8, 3, 1",
+      "division": "U15 Boys",
+      "a": "Christoff Kruger",
+      "b": "Umar Tootla",
+      "scoreA": "5",
+      "scoreB": "4",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 1"
+    },
+    {
+      "division": "U15 Boys",
+      "a": "Christiaan Shaw",
+      "b": "Christiaan Krige",
+      "scoreA": "6",
+      "scoreB": "3",
       "winner": "",
       "status": "Live",
       "court": "Court 2"
     },
     {
-      "division": "U19 Boys",
-      "a": "Tamara Werneyer",
-      "b": "Owen Scholtz",
-      "scoreA": "1, 2, 1",
-      "scoreB": "11, 11, 8",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 3"
-    },
-    {
-      "division": "U17 Boys",
-      "a": "Molibeli Mathibeli",
-      "b": "Jade Plaatjies",
-      "scoreA": "9",
-      "scoreB": "5",
+      "division": "U15 Boys",
+      "a": "Livia Roodt",
+      "b": "Johan Pretorius",
+      "scoreA": "",
+      "scoreB": "",
       "winner": "",
       "status": "Live",
       "court": "Court 4"

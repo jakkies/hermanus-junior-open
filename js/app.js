@@ -1,7 +1,7 @@
 import { fixtures, standings } from "./data.js?v=7";
 import { initialiseNavigation } from "./navigation.js";
 import { initialiseSharing } from "./share.js?v=3";
-import { loadOfficialResults } from "./official-results.js?v=9";
+import { loadOfficialResults } from "./official-results.js?v=10";
 import { initialiseDraws } from "./draws.js?v=2";
 import { initialiseSchedule, updateScheduleResults } from "./schedule.js?v=4";
 

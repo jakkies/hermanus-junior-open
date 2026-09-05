@@ -3,7 +3,9 @@ import { calculateStandings, mergeCapturedResults } from "./standings-calculator
 
 const DEFAULT_RESULTS_URL =
   "https://sportyhq.com/tournament/tv_display/27429";
-const CAPTURED_RESULTS_URL = new URL("./captured-results.json", import.meta.url);
+const LOCAL_CAPTURED_RESULTS_URL = new URL("./captured-results.json", import.meta.url);
+const REMOTE_CAPTURED_RESULTS_URL =
+  "https://raw.githubusercontent.com/jakkies/hermanus-junior-open/main/js/captured-results.json";
 
 function configuredUrl(key) {
   return globalThis.TournamentFeedConfig?.get?.()[key] || DEFAULT_RESULTS_URL;
@@ -160,18 +162,24 @@ export function mapTournamentProgress(progress, club = {}, resultsUrl = DEFAULT_
 }
 
 async function loadCapturedResults() {
-  try {
-    const response = await fetch(CAPTURED_RESULTS_URL, { cache: "no-store" });
-    if (!response.ok) throw new Error(`Captured results returned ${response.status}`);
-    const capture = await response.json();
-    return {
-      capturedAt: String(capture?.capturedAt || ""),
-      results: Array.isArray(capture?.results) ? capture.results : []
-    };
-  } catch (error) {
-    console.warn("Captured results are temporarily unavailable:", error);
-    return { capturedAt: "", results: [] };
+  const sources = [
+    `${REMOTE_CAPTURED_RESULTS_URL}?minute=${Math.floor(Date.now() / 60_000)}`,
+    LOCAL_CAPTURED_RESULTS_URL
+  ];
+  for (const source of sources) {
+    try {
+      const response = await fetch(source, { cache: "no-store" });
+      if (!response.ok) throw new Error(`Captured results returned ${response.status}`);
+      const capture = await response.json();
+      return {
+        capturedAt: String(capture?.capturedAt || ""),
+        results: Array.isArray(capture?.results) ? capture.results : []
+      };
+    } catch (error) {
+      console.warn(`Captured results are unavailable from ${source}:`, error);
+    }
   }
+  return { capturedAt: "", results: [] };
 }
 
 function withCapturedResults(snapshot, capture) {

@@ -105,34 +105,54 @@ async function chromeExecutable() {
 
 export async function readCourtFeeds() {
   const { chromium } = await import("playwright-core");
-  const browser = await chromium.launch({
-    executablePath: await chromeExecutable(),
-    headless: true,
-    args: ["--no-sandbox", "--disable-dev-shm-usage"]
-  });
-  const context = await browser.newContext({
-    locale: "en-ZA",
-    userAgent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/140.0.0.0 Safari/537.36",
-    viewport: { width: 1440, height: 1200 }
-  });
+  const headless = process.env.SPORTYHQ_HEADLESS === "true";
+  const profileRoot = process.env.SPORTYHQ_BROWSER_PROFILE || path.join(PROJECT_ROOT, ".sportyhq-browser-profile");
+  const executablePath = await chromeExecutable();
+  const results = [];
 
-  try {
-    const results = [];
-    for (const court of COURTS) {
-      const page = await context.newPage();
-      const url = `https://sportyhq.com/tournament/tv_scores/${TOURNAMENT_ID}/${court.feedId}`;
-      await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60_000 });
-      await page.waitForSelector("table tr", { timeout: 60_000 });
-      const rows = await page.locator("table tr").allInnerTexts();
-      const parsed = rows.map(row => parseCourtRow(row, `Court ${court.number}`)).filter(Boolean);
-      if (!parsed.length) throw new Error(`No match rows could be parsed for Court ${court.number}`);
-      results.push(...parsed);
-      await page.close();
+  for (const court of COURTS) {
+    let lastError;
+    for (let attempt = 1; attempt <= 2; attempt += 1) {
+      let context;
+      try {
+        context = await chromium.launchPersistentContext(`${profileRoot}-court-${court.number}`, {
+          executablePath,
+          headless,
+          args: [
+            "--disable-blink-features=AutomationControlled",
+            "--disable-dev-shm-usage",
+            "--window-position=-10000,-10000",
+            "--window-size=1440,1200"
+          ],
+          locale: "en-ZA",
+          viewport: { width: 1440, height: 1200 }
+        });
+        const page = context.pages()[0] || await context.newPage();
+        const url = `https://sportyhq.com/tournament/tv_scores/${TOURNAMENT_ID}/${court.feedId}`;
+        await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60_000 });
+        try {
+          await page.waitForSelector("table tr", { timeout: 15_000 });
+        } catch (error) {
+          const pageText = await page.locator("body").innerText().catch(() => "");
+          if (!pageText.includes(`Hermanus Squash Club, Court ${court.number}`)) {
+            throw new Error(`Court ${court.number} did not load its SportyHQ display. Page text: ${pageText.slice(0, 500) || "(empty)"}`, { cause: error });
+          }
+        }
+        const rows = await page.locator("table tr").allInnerTexts();
+        const parsed = rows.map(row => parseCourtRow(row, `Court ${court.number}`)).filter(Boolean);
+        results.push(...parsed);
+        lastError = null;
+        break;
+      } catch (error) {
+        lastError = error;
+        if (attempt < 2) console.warn(`Retrying Court ${court.number} after: ${error.message}`);
+      } finally {
+        await context?.close().catch(() => {});
+      }
     }
-    return results;
-  } finally {
-    await browser.close();
+    if (lastError) throw lastError;
   }
+  return results;
 }
 
 function capturedAt(date = new Date()) {
