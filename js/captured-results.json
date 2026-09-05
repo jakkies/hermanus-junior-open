@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 08:56 SAST",
+  "capturedAt": "5 September 2026, 09:02 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -295,31 +295,41 @@
       "division": "U17 Boys",
       "a": "Stephanus Kruger",
       "b": "Janno Kruger",
-      "scoreA": "17, 8, 11, 7",
-      "scoreB": "15, 11, 5, 4",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "17, 8, 11, 12",
+      "scoreB": "15, 11, 5, 10",
+      "winner": "a",
+      "status": "Completed",
       "court": "Court 1"
-    },
-    {
-      "division": "U17 Boys",
-      "a": "Jamaine Saaiman",
-      "b": "Nicolaas van Zyl",
-      "scoreA": "11, 7, 7, 2",
-      "scoreB": "3, 11, 11, 0",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 2"
     },
     {
       "division": "U17 Boys",
       "a": "NicolaasW Rust",
       "b": "Jade Plaatjies",
-      "scoreA": "11, 11, 5",
-      "scoreB": "7, 6, 5",
+      "scoreA": "11, 11, 11",
+      "scoreB": "7, 6, 7",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 3"
+    },
+    {
+      "division": "U17 Boys",
+      "a": "Jamaine Saaiman",
+      "b": "Nicolaas van Zyl",
+      "scoreA": "11, 7, 7, 9",
+      "scoreB": "3, 11, 11, 2",
       "winner": "",
       "status": "Live",
-      "court": "Court 3"
+      "court": "Court 2"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Yanu Koorts",
+      "b": "Ethan Joubert",
+      "scoreA": "",
+      "scoreB": "",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 4"
     }
   ]
 }
