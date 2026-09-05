@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 14:31 SAST",
+  "capturedAt": "5 September 2026, 14:38 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -613,23 +613,43 @@
     },
     {
       "division": "U17 Boys",
+      "a": "Likhanye Mayile",
+      "b": "Stephanus Kruger",
+      "scoreA": "11, 13, 9, 11",
+      "scoreB": "8, 11, 11, 5",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 4"
+    },
+    {
+      "division": "U17 Boys",
       "a": "Molibeli Mathibeli",
       "b": "Omri Beets",
-      "scoreA": "6, 6, 12, 2",
-      "scoreB": "11, 11, 10, 4",
+      "scoreA": "6, 6, 12, 8",
+      "scoreB": "11, 11, 10, 6",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
     },
     {
-      "division": "U17 Boys",
-      "a": "Likhanye Mayile",
-      "b": "Stephanus Kruger",
-      "scoreA": "11, 13, 9, 10",
-      "scoreB": "8, 11, 11, 5",
+      "division": "U17 Boys Play-off (Position 10-12)",
+      "a": "Evan Potgieter",
+      "b": "Jamaine Saaiman",
+      "scoreA": "",
+      "scoreB": "",
       "winner": "",
       "status": "Live",
-      "court": "Court 4"
+      "court": "Court 2"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Tamara Werneyer",
+      "b": "Ethan Joubert",
+      "scoreA": "",
+      "scoreB": "",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 3"
     }
   ]
 }
