@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 11:26 SAST",
+  "capturedAt": "5 September 2026, 11:35 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -475,8 +475,8 @@
       "division": "U15 Boys",
       "a": "Christiaan Krige",
       "b": "Sa-ad Tootla",
-      "scoreA": "4, 11, 1",
-      "scoreB": "11, 8, 0",
+      "scoreA": "4, 11, 9, 3",
+      "scoreB": "11, 8, 11, 5",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
