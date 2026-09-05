@@ -4,6 +4,7 @@ import { calculateStandings, mergeCapturedResults } from "./standings-calculator
 const DEFAULT_RESULTS_URL =
   "https://sportyhq.com/tournament/tv_display/27429";
 const LOCAL_CAPTURED_RESULTS_URL = new URL("./captured-results.json", import.meta.url);
+const WORKER_CAPTURED_RESULTS_URL = new URL("/api/captured-results", import.meta.url);
 const REMOTE_CAPTURED_RESULTS_URL =
   "https://raw.githubusercontent.com/jakkies/hermanus-junior-open/main/js/captured-results.json";
 
@@ -162,8 +163,10 @@ export function mapTournamentProgress(progress, club = {}, resultsUrl = DEFAULT_
 }
 
 async function loadCapturedResults() {
+  const minute = Math.floor(Date.now() / 60_000);
   const sources = [
-    `${REMOTE_CAPTURED_RESULTS_URL}?minute=${Math.floor(Date.now() / 60_000)}`,
+    `${WORKER_CAPTURED_RESULTS_URL}?minute=${minute}`,
+    `${REMOTE_CAPTURED_RESULTS_URL}?minute=${minute}`,
     LOCAL_CAPTURED_RESULTS_URL
   ];
   for (const source of sources) {
