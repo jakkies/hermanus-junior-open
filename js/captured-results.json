@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 14:46 SAST",
+  "capturedAt": "5 September 2026, 14:54 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -635,8 +635,8 @@
       "division": "U17 Boys Play-off (Position 10-12)",
       "a": "Evan Potgieter",
       "b": "Jamaine Saaiman",
-      "scoreA": "11, 4",
-      "scoreB": "3, 5",
+      "scoreA": "11, 7, 10",
+      "scoreB": "3, 11, 5",
       "winner": "",
       "status": "Live",
       "court": "Court 2"
@@ -645,8 +645,8 @@
       "division": "U19 Boys",
       "a": "Tamara Werneyer",
       "b": "Ethan Joubert",
-      "scoreA": "8",
-      "scoreB": "10",
+      "scoreA": "8, 6",
+      "scoreB": "11, 9",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
