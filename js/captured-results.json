@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 12:59 SAST",
+  "capturedAt": "5 September 2026, 13:06 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -543,33 +543,43 @@
     },
     {
       "division": "U17 Boys",
+      "a": "Oliver Moyo",
+      "b": "Denwill May",
+      "scoreA": "10, 11, 11, 6, 7",
+      "scoreB": "12, 9, 7, 11, 11",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 4"
+    },
+    {
+      "division": "U17 Boys",
       "a": "Milton Posthumus",
       "b": "Molibeli Mathibeli",
-      "scoreA": "7, 6",
-      "scoreB": "11, 0",
+      "scoreA": "7, 11, 5",
+      "scoreB": "11, 4, 4",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
     },
     {
-      "division": "U17 Boys",
-      "a": "Likhanye Mayile",
-      "b": "NicolaasW Rust",
+      "division": "U19 Boys",
+      "a": "Albrezain Pietersen",
+      "b": "Tamara Werneyer",
       "scoreA": "",
       "scoreB": "",
       "winner": "",
       "status": "Live",
-      "court": "Court 3"
+      "court": "Court 2"
     },
     {
       "division": "U17 Boys",
-      "a": "Oliver Moyo",
-      "b": "Denwill May",
-      "scoreA": "10, 11, 11, 5",
-      "scoreB": "12, 9, 7, 6",
+      "a": "Likhanye Mayile",
+      "b": "NicolaasW Rust",
+      "scoreA": "3",
+      "scoreB": "9",
       "winner": "",
       "status": "Live",
-      "court": "Court 4"
+      "court": "Court 3"
     }
   ]
 }
