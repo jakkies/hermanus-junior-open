@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 09:08 SAST",
+  "capturedAt": "5 September 2026, 09:14 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -325,18 +325,38 @@
       "division": "U17 Boys",
       "a": "Milton Posthumus",
       "b": "Evan Potgieter",
-      "scoreA": "",
-      "scoreB": "",
+      "scoreA": "10",
+      "scoreB": "3",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
     },
     {
+      "division": "U17 Boys",
+      "a": "Likhanye Mayile",
+      "b": "Oliver Moyo",
+      "scoreA": "",
+      "scoreB": "",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 2"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Albrezain Pietersen",
+      "b": "Jesse Swart",
+      "scoreA": "7",
+      "scoreB": "3",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 3"
+    },
+    {
       "division": "U19 Boys",
       "a": "Yanu Koorts",
       "b": "Ethan Joubert",
-      "scoreA": "11",
-      "scoreB": "6",
+      "scoreA": "11, 11",
+      "scoreB": "6, 9",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
