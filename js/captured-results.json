@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 12:32 SAST",
+  "capturedAt": "5 September 2026, 12:41 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -535,8 +535,8 @@
       "division": "U17 Boys Play-off (Position 10-12)",
       "a": "Evan Potgieter",
       "b": "Jade Plaatjies",
-      "scoreA": "5",
-      "scoreB": "11",
+      "scoreA": "5, 6",
+      "scoreB": "11, 11",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
@@ -545,8 +545,8 @@
       "division": "U17 Boys",
       "a": "Oliver Moyo",
       "b": "Denwill May",
-      "scoreA": "",
-      "scoreB": "",
+      "scoreA": "10, 0",
+      "scoreB": "12, 1",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
