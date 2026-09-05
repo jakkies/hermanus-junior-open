@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 11:15 SAST",
+  "capturedAt": "5 September 2026, 11:26 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -455,31 +455,31 @@
       "division": "U19 Boys",
       "a": "Sahil Khalfey",
       "b": "Tamara Werneyer",
-      "scoreA": "11, 4",
-      "scoreB": "2, 1",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "11, 11, 11",
+      "scoreB": "2, 2, 1",
+      "winner": "a",
+      "status": "Completed",
       "court": "Court 1"
-    },
-    {
-      "division": "U15 Boys",
-      "a": "Christiaan Krige",
-      "b": "Sa-ad Tootla",
-      "scoreA": "",
-      "scoreB": "",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 3"
     },
     {
       "division": "U15 Boys",
       "a": "Livia Roodt",
       "b": "Christiaan Shaw",
-      "scoreA": "12, 11, 11, 5",
-      "scoreB": "14, 0, 8, 1",
+      "scoreA": "12, 11, 11, 11",
+      "scoreB": "14, 0, 8, 8",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 4"
+    },
+    {
+      "division": "U15 Boys",
+      "a": "Christiaan Krige",
+      "b": "Sa-ad Tootla",
+      "scoreA": "4, 11, 1",
+      "scoreB": "11, 8, 0",
       "winner": "",
       "status": "Live",
-      "court": "Court 4"
+      "court": "Court 3"
     }
   ]
 }
