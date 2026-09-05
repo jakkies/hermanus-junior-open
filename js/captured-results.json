@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 12:25 SAST",
+  "capturedAt": "5 September 2026, 12:32 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -525,21 +525,31 @@
       "division": "U19 Boys",
       "a": "Tamara Werneyer",
       "b": "Jesse Swart",
-      "scoreA": "11, 11",
-      "scoreB": "2, 7",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "11, 11, 11",
+      "scoreB": "2, 7, 5",
+      "winner": "a",
+      "status": "Completed",
       "court": "Court 1"
     },
     {
       "division": "U17 Boys Play-off (Position 10-12)",
       "a": "Evan Potgieter",
       "b": "Jade Plaatjies",
+      "scoreA": "5",
+      "scoreB": "11",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 3"
+    },
+    {
+      "division": "U17 Boys",
+      "a": "Oliver Moyo",
+      "b": "Denwill May",
       "scoreA": "",
       "scoreB": "",
       "winner": "",
       "status": "Live",
-      "court": "Court 3"
+      "court": "Court 4"
     }
   ]
 }
