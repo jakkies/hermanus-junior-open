@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 08:21 SAST",
+  "capturedAt": "5 September 2026, 08:36 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -243,40 +243,60 @@
     },
     {
       "division": "U15 Boys",
-      "a": "Christoff Kruger",
-      "b": "Umar Tootla",
-      "scoreA": "6",
-      "scoreB": "7",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 1"
-    },
-    {
-      "division": "U15 Boys",
       "a": "Christiaan Shaw",
       "b": "Christiaan Krige",
-      "scoreA": "11, 13",
-      "scoreB": "5, 15",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "11, 13, 9, 5",
+      "scoreB": "5, 15, 11, 11",
+      "winner": "b",
+      "status": "Completed",
       "court": "Court 2"
     },
     {
       "division": "U15 Boys",
       "a": "Reuben Bekker",
       "b": "Sa-ad Tootla",
-      "scoreA": "11, 6",
-      "scoreB": "7, 11",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "11, 6, 11, 11",
+      "scoreB": "7, 11, 6, 5",
+      "winner": "a",
+      "status": "Completed",
       "court": "Court 3"
     },
     {
       "division": "U15 Boys",
       "a": "Livia Roodt",
       "b": "Johan Pretorius",
-      "scoreA": "6, 4, 1",
-      "scoreB": "11, 11, 2",
+      "scoreA": "6, 4, 7",
+      "scoreB": "11, 11, 11",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 4"
+    },
+    {
+      "division": "U17 Boys",
+      "a": "Stephanus Kruger",
+      "b": "Janno Kruger",
+      "scoreA": "3",
+      "scoreB": "2",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 1"
+    },
+    {
+      "division": "U15 Boys",
+      "a": "Christoff Kruger",
+      "b": "Umar Tootla",
+      "scoreA": "7, 10, 9",
+      "scoreB": "11, 12, 10",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 1"
+    },
+    {
+      "division": "U17 Boys",
+      "a": "Molibeli Mathibeli",
+      "b": "Denwill May",
+      "scoreA": "4",
+      "scoreB": "1",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
