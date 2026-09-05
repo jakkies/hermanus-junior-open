@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 13:14 SAST",
+  "capturedAt": "5 September 2026, 13:21 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -555,7 +555,7 @@
       "division": "U17 Boys",
       "a": "Milton Posthumus",
       "b": "Molibeli Mathibeli",
-      "scoreA": "7, 11, 11, 2",
+      "scoreA": "7, 11, 11, 3",
       "scoreB": "11, 4, 7, 4",
       "winner": "",
       "status": "Live",
@@ -565,8 +565,8 @@
       "division": "U19 Boys",
       "a": "Albrezain Pietersen",
       "b": "Tamara Werneyer",
-      "scoreA": "6",
-      "scoreB": "3",
+      "scoreA": "11, 6",
+      "scoreB": "7, 4",
       "winner": "",
       "status": "Live",
       "court": "Court 2"
@@ -575,8 +575,8 @@
       "division": "U17 Boys",
       "a": "Likhanye Mayile",
       "b": "NicolaasW Rust",
-      "scoreA": "3, 11",
-      "scoreB": "11, 3",
+      "scoreA": "3, 11, 11",
+      "scoreB": "11, 3, 7",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
