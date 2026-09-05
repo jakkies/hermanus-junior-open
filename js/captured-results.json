@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 10:59 SAST",
+  "capturedAt": "5 September 2026, 11:07 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -432,31 +432,41 @@
       "court": "Court 1"
     },
     {
+      "division": "U19 Boys",
+      "a": "Jesse Swart",
+      "b": "Ethan Joubert",
+      "scoreA": "9, 11, 9, 11, 10",
+      "scoreB": "11, 6, 11, 7, 12",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 3"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Sahil Khalfey",
+      "b": "Tamara Werneyer",
+      "scoreA": "",
+      "scoreB": "",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 1"
+    },
+    {
       "division": "U17 Boys",
       "a": "Stephanus Kruger",
       "b": "Jamaine Saaiman",
-      "scoreA": "11",
-      "scoreB": "8",
+      "scoreA": "11, 11",
+      "scoreB": "8, 4",
       "winner": "",
       "status": "Live",
       "court": "Court 2"
     },
     {
-      "division": "U19 Boys",
-      "a": "Jesse Swart",
-      "b": "Ethan Joubert",
-      "scoreA": "9, 11, 9, 10",
-      "scoreB": "11, 6, 11, 7",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 3"
-    },
-    {
       "division": "U15 Boys",
       "a": "Livia Roodt",
       "b": "Christiaan Shaw",
-      "scoreA": "11",
-      "scoreB": "11",
+      "scoreA": "12, 11, 2",
+      "scoreB": "14, 0, 3",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
