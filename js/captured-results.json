@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 14:22 SAST",
+  "capturedAt": "5 September 2026, 14:31 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -615,8 +615,8 @@
       "division": "U17 Boys",
       "a": "Molibeli Mathibeli",
       "b": "Omri Beets",
-      "scoreA": "6",
-      "scoreB": "11",
+      "scoreA": "6, 6, 12, 2",
+      "scoreB": "11, 11, 10, 4",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
@@ -625,8 +625,8 @@
       "division": "U17 Boys",
       "a": "Likhanye Mayile",
       "b": "Stephanus Kruger",
-      "scoreA": "11, 13, 6",
-      "scoreB": "8, 11, 5",
+      "scoreA": "11, 13, 9, 10",
+      "scoreB": "8, 11, 11, 5",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
