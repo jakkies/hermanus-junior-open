@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 15:20 SAST",
+  "capturedAt": "5 September 2026, 15:27 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -652,11 +652,21 @@
       "court": "Court 2"
     },
     {
+      "division": "U19 Boys",
+      "a": "Albrezain Pietersen",
+      "b": "Owen Scholtz",
+      "scoreA": "4, 3, 5",
+      "scoreB": "11, 11, 11",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 4"
+    },
+    {
       "division": "U17 Boys",
       "a": "NicolaasW Rust",
       "b": "Stephanus Kruger",
-      "scoreA": "5",
-      "scoreB": "4",
+      "scoreA": "11, 5",
+      "scoreB": "9, 4",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
@@ -665,21 +675,11 @@
       "division": "U17 Boys",
       "a": "Denwill May",
       "b": "Janno Kruger",
-      "scoreA": "10",
-      "scoreB": "6",
+      "scoreA": "11, 11",
+      "scoreB": "6, 7",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
-    },
-    {
-      "division": "U19 Boys",
-      "a": "Albrezain Pietersen",
-      "b": "Owen Scholtz",
-      "scoreA": "4, 3, 2",
-      "scoreB": "11, 11, 1",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 4"
     }
   ]
 }
