@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 10:35 SAST",
+  "capturedAt": "5 September 2026, 10:45 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -405,18 +405,28 @@
       "division": "U15 Boys",
       "a": "Johan Pretorius",
       "b": "Christoff Kruger",
-      "scoreA": "10, 7, 11, 11",
-      "scoreB": "12, 11, 8, 5",
+      "scoreA": "10, 7, 11, 11, 11",
+      "scoreB": "12, 11, 8, 5, 9",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 2"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Yanu Koorts",
+      "b": "Owen Scholtz",
+      "scoreA": "",
+      "scoreB": "",
       "winner": "",
       "status": "Live",
-      "court": "Court 2"
+      "court": "Court 1"
     },
     {
       "division": "U19 Boys",
       "a": "Jesse Swart",
       "b": "Ethan Joubert",
-      "scoreA": "5",
-      "scoreB": "4",
+      "scoreA": "9, 9",
+      "scoreB": "11, 5",
       "winner": "",
       "status": "Live",
       "court": "Court 3"
@@ -425,8 +435,8 @@
       "division": "U17 Boys",
       "a": "Omri Beets",
       "b": "Nicolaas van Zyl",
-      "scoreA": "11",
-      "scoreB": "2",
+      "scoreA": "11, 11, 10",
+      "scoreB": "2, 4, 3",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
