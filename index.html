@@ -33,7 +33,7 @@
   <link rel="stylesheet" href="css/variables.css?v=2">
   <link rel="stylesheet" href="css/base.css?v=3">
   <link rel="stylesheet" href="css/layout.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=12">
+  <link rel="stylesheet" href="css/components.css?v=13">
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script type="application/ld+json">
@@ -166,42 +166,42 @@
         <div class="section-heading">
           <div><p class="eyebrow">Official live scoring</p><h2 id="live-title">Live Court Scores</h2></div>
         </div>
-        <p class="live-source-status"><span aria-hidden="true"></span>Scores are supplied by SportyHQ and refresh automatically every 15 seconds.</p>
+        <p class="live-source-status" id="live-result-status" data-state="waiting" role="status" aria-live="polite"><span aria-hidden="true"></span>Scores are supplied by SportyHQ and refresh automatically every minute.</p>
         <div class="court-embeds" aria-label="Live court scores">
-          <article class="court-embed">
+          <article class="court-embed" data-live-court-card="Court 1">
             <div class="court-embed__header">
-              <div><p class="eyebrow">Live match</p><h3>Court 1</h3></div>
-              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10660" target="_blank" rel="noopener noreferrer">Open score <span aria-hidden="true">↗</span></a>
+              <div><p class="eyebrow">Official court feed</p><h3>Court 1</h3></div>
+              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10660" target="_blank" rel="noopener noreferrer">SportyHQ <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="court-score court-score--sportyhq">
-              <iframe src="https://sportyhq.com/tournament/tv_scores/27429/10660" title="SportyHQ live scores for Court 1" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="court-score court-score--native" data-live-court="Court 1" aria-live="polite" aria-busy="true">
+              <div class="court-score__loading"><span class="live-score-loader" aria-hidden="true"></span><strong>Loading Court 1…</strong></div>
             </div>
           </article>
-          <article class="court-embed">
+          <article class="court-embed" data-live-court-card="Court 2">
             <div class="court-embed__header">
-              <div><p class="eyebrow">Live match</p><h3>Court 2</h3></div>
-              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10661" target="_blank" rel="noopener noreferrer">Open score <span aria-hidden="true">↗</span></a>
+              <div><p class="eyebrow">Official court feed</p><h3>Court 2</h3></div>
+              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10661" target="_blank" rel="noopener noreferrer">SportyHQ <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="court-score court-score--sportyhq">
-              <iframe src="https://sportyhq.com/tournament/tv_scores/27429/10661" title="SportyHQ live scores for Court 2" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="court-score court-score--native" data-live-court="Court 2" aria-live="polite" aria-busy="true">
+              <div class="court-score__loading"><span class="live-score-loader" aria-hidden="true"></span><strong>Loading Court 2…</strong></div>
             </div>
           </article>
-          <article class="court-embed">
+          <article class="court-embed" data-live-court-card="Court 3">
             <div class="court-embed__header">
-              <div><p class="eyebrow">Live match</p><h3>Court 3</h3></div>
-              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10662" target="_blank" rel="noopener noreferrer">Open score <span aria-hidden="true">↗</span></a>
+              <div><p class="eyebrow">Official court feed</p><h3>Court 3</h3></div>
+              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10662" target="_blank" rel="noopener noreferrer">SportyHQ <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="court-score court-score--sportyhq">
-              <iframe src="https://sportyhq.com/tournament/tv_scores/27429/10662" title="SportyHQ live scores for Court 3" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="court-score court-score--native" data-live-court="Court 3" aria-live="polite" aria-busy="true">
+              <div class="court-score__loading"><span class="live-score-loader" aria-hidden="true"></span><strong>Loading Court 3…</strong></div>
             </div>
           </article>
-          <article class="court-embed">
+          <article class="court-embed" data-live-court-card="Court 4">
             <div class="court-embed__header">
-              <div><p class="eyebrow">Live match</p><h3>Court 4</h3></div>
-              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10663" target="_blank" rel="noopener noreferrer">Open score <span aria-hidden="true">↗</span></a>
+              <div><p class="eyebrow">Official court feed</p><h3>Court 4</h3></div>
+              <a class="court-embed__feed-link" href="https://sportyhq.com/tournament/tv_scores/27429/10663" target="_blank" rel="noopener noreferrer">SportyHQ <span aria-hidden="true">↗</span></a>
             </div>
-            <div class="court-score court-score--sportyhq">
-              <iframe src="https://sportyhq.com/tournament/tv_scores/27429/10663" title="SportyHQ live scores for Court 4" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="court-score court-score--native" data-live-court="Court 4" aria-live="polite" aria-busy="true">
+              <div class="court-score__loading"><span class="live-score-loader" aria-hidden="true"></span><strong>Loading Court 4…</strong></div>
             </div>
           </article>
         </div>
@@ -227,6 +227,6 @@
   <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
   <div class="offline-banner" role="status" hidden>You’re offline. Tournament feeds will refresh when the connection returns.</div>
   <script src="js/feed-config.js?v=3"></script>
-  <script type="module" src="js/app.js?v=22"></script>
+  <script type="module" src="js/app.js?v=23"></script>
 </body>
 </html>

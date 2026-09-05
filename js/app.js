@@ -4,6 +4,7 @@ import { initialiseSharing } from "./share.js?v=3";
 import { loadOfficialResults } from "./official-results.js?v=11";
 import { initialiseDraws } from "./draws.js?v=2";
 import { initialiseSchedule, updateScheduleResults } from "./schedule.js?v=4";
+import { updateLiveCourts } from "./live-courts.js?v=1";
 
 const OFFICIAL_RESULTS_REFRESH_INTERVAL = 60 * 1000;
 let officialResultsRefreshActive = false;
@@ -123,6 +124,7 @@ async function refreshOfficialResults() {
     const snapshot = await loadOfficialResults();
     updateScheduleResults(snapshot.fixtures || [], snapshot);
     renderStandings(snapshot.standings || [], snapshot.standingsStages || snapshot.stages || [], snapshot);
+    updateLiveCourts(snapshot.fixtures || [], snapshot);
   } catch (error) {
     console.warn("Could not refresh official results:", error);
   } finally {
@@ -160,6 +162,7 @@ function initialise() {
   initialiseDraws();
   initialiseSchedule();
   updateScheduleResults(fixtures, { isBundledSnapshot: true });
+  updateLiveCourts(fixtures, { isBundledSnapshot: true });
   initialiseOfficialResults();
   initialiseNavigation();
   initialiseSharing();
