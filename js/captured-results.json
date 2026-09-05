@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 12:09 SAST",
+  "capturedAt": "5 September 2026, 12:17 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -493,40 +493,40 @@
     },
     {
       "division": "U19 Boys",
-      "a": "Tamara Werneyer",
-      "b": "Jesse Swart",
-      "scoreA": "",
-      "scoreB": "",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 1"
-    },
-    {
-      "division": "U19 Boys",
       "a": "Albrezain Pietersen",
       "b": "Yanu Koorts",
-      "scoreA": "12, 8",
-      "scoreB": "14, 11",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "12, 8, 6",
+      "scoreB": "14, 11, 11",
+      "winner": "b",
+      "status": "Completed",
       "court": "Court 2"
     },
     {
       "division": "U17 Boys",
       "a": "Omri Beets",
       "b": "Janno Kruger",
-      "scoreA": "11, 11, 2",
-      "scoreB": "3, 7, 0",
+      "scoreA": "11, 11, 11",
+      "scoreB": "3, 7, 8",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 3"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Tamara Werneyer",
+      "b": "Jesse Swart",
+      "scoreA": "9",
+      "scoreB": "2",
       "winner": "",
       "status": "Live",
-      "court": "Court 3"
+      "court": "Court 1"
     },
     {
       "division": "U17 Boys",
       "a": "Stephanus Kruger",
       "b": "Nicolaas van Zyl",
-      "scoreA": "11, 5",
-      "scoreB": "2, 4",
+      "scoreA": "11, 11, 10",
+      "scoreB": "2, 8, 5",
       "winner": "",
       "status": "Live",
       "court": "Court 4"
