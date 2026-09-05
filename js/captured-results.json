@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 09:55 SAST",
+  "capturedAt": "5 September 2026, 10:13 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -362,34 +362,54 @@
       "court": "Court 4"
     },
     {
-      "division": "U19 Boys",
-      "a": "Sahil Khalfey",
-      "b": "Owen Scholtz",
-      "scoreA": "11, 8, 8",
-      "scoreB": "4, 11, 4",
-      "winner": "",
-      "status": "Live",
-      "court": "Court 1"
-    },
-    {
       "division": "U15 Boys",
       "a": "Umar Tootla",
       "b": "Reuben Bekker",
-      "scoreA": "7, 7",
-      "scoreB": "11, 5",
-      "winner": "",
-      "status": "Live",
+      "scoreA": "7, 12, 8",
+      "scoreB": "11, 14, 11",
+      "winner": "b",
+      "status": "Completed",
+      "court": "Court 1"
+    },
+    {
+      "division": "U19 Boys",
+      "a": "Sahil Khalfey",
+      "b": "Owen Scholtz",
+      "scoreA": "11, 8, 11, 11",
+      "scoreB": "4, 11, 5, 7",
+      "winner": "a",
+      "status": "Completed",
       "court": "Court 1"
     },
     {
       "division": "U15 Boys",
       "a": "Christiaan Krige",
       "b": "Livia Roodt",
-      "scoreA": "11, 13, 2",
-      "scoreB": "8, 11, 2",
+      "scoreA": "11, 13, 11",
+      "scoreB": "8, 11, 8",
+      "winner": "a",
+      "status": "Completed",
+      "court": "Court 3"
+    },
+    {
+      "division": "U15 Boys",
+      "a": "Johan Pretorius",
+      "b": "Christoff Kruger",
+      "scoreA": "8",
+      "scoreB": "10",
       "winner": "",
       "status": "Live",
-      "court": "Court 3"
+      "court": "Court 2"
+    },
+    {
+      "division": "U15 Boys",
+      "a": "Sa-ad Tootla",
+      "b": "Christiaan Shaw",
+      "scoreA": "11",
+      "scoreB": "7",
+      "winner": "",
+      "status": "Live",
+      "court": "Court 4"
     }
   ]
 }
