@@ -1,5 +1,5 @@
 {
-  "capturedAt": "5 September 2026, 15:43 SAST",
+  "capturedAt": "5 September 2026, 15:51 SAST",
   "results": [
     {
       "division": "U15 Boys",
@@ -685,8 +685,8 @@
       "division": "U17 Boys",
       "a": "Milton Posthumus",
       "b": "Omri Beets",
-      "scoreA": "3",
-      "scoreB": "3",
+      "scoreA": "12",
+      "scoreB": "10",
       "winner": "",
       "status": "Live",
       "court": "Court 1"
